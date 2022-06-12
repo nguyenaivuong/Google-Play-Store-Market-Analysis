@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Project Data Visualization</title>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<link rel="stylesheet" href="styles.css" />
+
+
+        <script src="./clean_data.js"></script>
+        <script src="./free_paid_bar_pie.js"></script>
+        <script src="./category_bar.js"></script>
+        <script src="./top10app_table.js"></script>
+        <script src="./top10category_free_paid_bar.js"></script>
+		<script src="./app_price_plot.js"></script>
+		<script src="./utils.js"></script>
+		<script src="./category_pie.js"></script>
+		<script src="./line_bar.js"></script>
+
+	</head>
+
+	<body>
+
+		<h3 style="font-size: 60px; text-align: center;">
+			Google Play Store Market Analysis Project
+		</h3>
+
+		<div class= "container">
+			<h2>
+				What Is The Distribution Of Free Apps Versus Paid Apps?
+			</h2>
+			<div id="bar1" class="div1"></div>
+			<div id="pie1" class="div1"></div>
+			"Out of 9660 apps listed from Google Play, paid apps represent for a far smaller than free apps. More than 90% of apps available on Google Play Store are freeware, however, it should be noted that many free apps may either offer or require in-app purchases."
+		</div>
+
+		<div class= "container2" >
+			<div>
+				<h2>
+					What Is The Distribution Of Categories in Google Play?
+				</h2>
+				<p>
+					There are 33 categories collected from Google Play Store. We calculated the distribution category by the number of installs.
+				</p>
+				<div id="category" class="div2"></div>
+				"Following the above distribution, the game apps attract the most users while event apps are the least attractive to users."
+			</div>
+
+			<div style="padding-top: 90px;">
+				<p><b>Click on the bar of any category to show the percentage of each category over the total</b></p>
+				<div id="catetory_pie" class="div_pie"></div>
+			</div>
+		</div>
+
+		<div class= "container", style="height: 600px;">
+			<h2>
+				What Are The Top 10 Apps With The Most Downloads?
+			</h2>
+			<p>
+				"While the most popular category is game, the most commonly used applications are about communication."
+			</p>
+			<div id="top10app"></div>
+		</div>
+
+		<div class= "container2">
+			<div>
+				<h2>
+					What Is The Relationship Between Price And Application?
+				</h2>
+				<div id="plot" class="div2"></div>
+			</div>
+			<!-- <div></div> -->
+		</div>
+
+		<div class= "container", style="height: 700px;">
+			<h2>
+				Which Quality Is Beter, Paid Apps Or Free Apps?
+			</h2>
+			<p>
+				"In general, the rating od paid apps are higher than free apps."
+			</p>
+			<div id="top10bar" style="height: 500px; width:1000px;"></div>
+		</div>
+
+		<div class= "container2">
+			<div>
+				<h2>
+					Is It True If Many Apps, Many Installs?
+				</h2>
+				<div id="linebar" class="div2"></div>
+			</div>
+			<!-- <div></div> -->
+		</div>
+
+
+		<script>
+
+				d3.csv("dataset/googleplaystore.csv", function (data) {
+                    var dataApp = uniqApp(data, (it) => it.App);
+                    free_paid_bar(dataApp, "bar1");
+					free_paid_pie(dataApp, "pie1");
+					category_bar(dataApp, "category");
+					top10app_table(dataApp, "#top10app");
+                    top10category_free_paid_bar(dataApp, "top10bar");
+					app_price_plot(dataApp, "plot");
+					line_bar(get_category_sum_install(dataApp), "linebar");
+					calulate_category_sum(dataApp);
+				});
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+
+html{
+	-webkit-text-size-adjust: 100%;
+}
+
+h2 {
+    display: block;
+    font-size: 1.9em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+body {
+    font-family: sans-serif;
+    padding-top: 30px;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.container{
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 3%;
+	background-color: rgba(241, 252, 255, 0.59);
+	height: 750px;
+	width: 1100px;
+	border-radius: 10%;
+  padding-top: 50px;
+  position: sticky;
+  margin-left: 800px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.container2{
+	display: inline-flex;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+	justify-content: space-evenly;
+	padding: 3%;
+	background-color: rgba(243, 243, 252, 0.341);
+	height: 1300px;
+	width: 2500px;
+	border-radius: 10%;
+  padding-top: 50px;
+  position: sticky;
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+div.container {
+	position: relative;
+}
+
+.background {
+	background-color: rgba(249, 229, 252, 0.59);
+	color: rgb(250, 57, 92);
+}
+
+.text-style {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.div1 {
+	height: 500px;
+	width: 500px;
+	text-align: center;
+	padding-top: 50px;
+  /* background-color: powderblue; */
+}
+
+.div2 {
+	height: 1000px;
+	width: 1500px;
+	text-align: center;
+	padding-top: 50px;
+	/* background-color: powderblue; */
+}
+
+.div3 {
+	height: 1000px;
+	width: 1500px;
+	text-align: center;
+	padding-top: 50px;
+  /* background-color: powderblue; */
+}
+
+.div_pie {
+	height:600px;
+	width: 600px;
+	padding-top: 50px;
+  position: sticky;
+	/* background-color: powderblue; */
+}
+
+table {
+  /* border-collapse: collapse; */
+  border: 2px black solid;
+  font: 12px sans-serif;
+}
+
+td{
+  border: 1px black solid;
+  padding: 5px;
+}
+th {
+  border: 1px black solid;
+  padding: 5px;
+  background-color: rgb(255, 164, 180);
+}
+
+
+
+/* .wj-flexchart .wj-data-labels .wj-data-label {
+    font-size: 15pt;
+    fill: white;
+}
+
+.wj-flexchart .wj-legend .wj-label {
+    font-size: 15pt;
+}
+
+.wj-flexchart .wj-label {
+    font-size: 15pt;
+} */
+
+.axis { font: 14px sans-serif; }
